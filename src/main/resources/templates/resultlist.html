@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>CUSTOMER_BW_SHAKE</title>
+    <style>
+        #summary_table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddd;
+        }
+    </style>
+</head>
+
+<body>
+<div id="detail">
+    <div id="custoinfo">
+        <h2>客户日峰值带宽抖动</h2>
+
+        <ul>
+            <li>查询结果</li>
+            <table>
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>属相</th>
+                    <th>工作地</th>
+                    <th>年龄</th>
+                    <th>身高cm</th>
+                    <th>学历</th>
+                    <th>体重kg</th>
+                    <th>籍贯</th>
+                    <th>工作单位</th>
+                    <th>家庭成员</th>
+                    <th>联系方式</th>
+                    <th>自身条件备注</th>
+                    <th>择偶（身高 最小 cm</th>
+                    <th>择偶（身高 最大 cm</th>
+                    <th>择偶（年龄最小）</th>
+                    <th>择偶 （年龄最大）</th>
+                    <th>择偶要求条件备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="customerInfo: ${customerInfos}">
+                    <tr>
+                        <td th:text="${customerInfo.name}">123456</td>
+                        <td th:text="${customerInfo.sex}">测试节点名称</td>
+                        <td th:text="${customerInfo.chineseZodiac}">0</td>
+                        <td th:text="${customerInfo.workingGround}">0</td>
+                        <td th:text="${customerInfo.age}+'%'">0</td>
+                        <td th:text="${customerInfo.height}">0</td>
+                        <td th:text="${customerInfo.education}+'%'">0</td>
+                        <td th:text="${customerInfo.weight}">0</td>
+                        <td th:text="${customerInfo.nativePlace}">0</td>
+                        <td th:text="${customerInfo.workingCompany}">0</td>
+                        <td th:text="${customerInfo.memberOfFamily}">0</td>
+                        <td th:text="${customerInfo.contactWay}">0</td>
+                        <td th:text="${customerInfo.myseltComment}">0</td>
+                        <td th:text="${customerInfo.halfHeightLittle}">0</td>
+                        <td th:text="${customerInfo.halfHeightBig}">0</td>
+                        <td th:text="${customerInfo.halfAgeLittle}">0</td>
+                        <td th:text="${customerInfo.halfAgeBig}">0</td>
+                        <td th:text="${customerInfo.halfComment}">0</td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+        </ul>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+

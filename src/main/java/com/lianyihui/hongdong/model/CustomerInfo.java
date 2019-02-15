@@ -18,7 +18,7 @@ public class CustomerInfo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Integer id;
 	@Column(name = "create_date")
-	protected Timestamp createDate;
+	protected Timestamp createDate = new Timestamp(System.currentTimeMillis());
 	@Column(name = "working_ground")
 	String workingGround;
 	String name;

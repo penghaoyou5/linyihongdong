@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>链接列表</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 10px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        }
+
+        div {
+            width: 100%;
+        }
+
+        h2 {
+            font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        input button li {
+            font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+            border-bottom: 1px solid #ccc;
+        }
+
+        input button li:last-child {
+            border: none;
+            padding: 100px;
+        }
+
+        input button li a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            width: 800px;
+            -webkit-transition: font-size 0.5s ease, background-color 0.3s ease;
+            -moz-transition: font-size 0.5s ease, background-color 0.3s ease;
+            -o-transition: font-size 0.5s ease, background-color 0.3s ease;
+            -ms-transition: font-size 0.5s ease, background-color 0.3s ease;
+            transition: font-size 0.5s ease, background-color 0.3s ease;
+        }
+
+        input button li a:hover {
+            font-size: 100px;
+            background: #f6f6f6;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div id="urls">
+    <ul>
+        <li> 链接列表</li>
+        <!--<li> 日期: <input id="target" type="target" name="firstname"/></li>-->
+
+        <li>
+        <a href="saveone">信息上传</a>
+        </li>
+        <li>
+            <a href="queryinfo">信息查询</a>
+        </li>
+
+        <!--<li>-->
+            <!--<button id="saveone"> 信息上传</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="queryinfo"> 信息查询</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="customerBwShakeReport"> 用户日峰带宽抖动</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="calculateCustomerMissRateCompareReport"> 成本回源率和和业务回源率</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="customerBusinessMissRateCompareReport"> 成本回源率和业务回源率-区分直播下载</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="dailyOrMonthlyReportMysqlReport"> 成本日报数据（成本月报表数据）</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="weeklyReportReport"> 成本周报数据</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="ispStableRateDailyReport"> 运营商平稳系数日报</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="ispStableRateMonthReport"> 运营商平稳系数月报</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="clientIspUnitPriceReport"> 地区运营商单价-真实单价</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="topMiddleBwMonitorReport"> 中上层保底带宽</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="dayPeakAvgMonthPeak"> 用户日峰月均与月峰值带宽</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="uncutReport"> 资源报备未切量</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="get95StateRate"> 95免费时长平稳度</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="accuracyReport"> 资源报备准确率</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="custRateInNodeReport"> 提供每个节点分摊客户权重</button>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="cust_rate_in_node">提供每个节点分摊客户权重-提供计费组信息</a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="bufferReport"> 用户切量预测</button>-->
+        <!--</li>-->
+
+
+        <!--<li>-->
+            <!--<br/>-->
+            <!--<br/>-->
+            <!--<br/>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<button id="getTranscodeSummaryMail"> 转码周报邮件发送</button>-->
+        <!--</li>-->
+    </ul>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('#saveone').on('click', function () {
+        var url = 'saveone';
+        requestUrl(url)
+    })
+    $('#queryinfo').on('click', function () {
+        var url = 'queryinfo';
+        requestUrl(url)
+    })
+    // $('#customerBwShakeReport').on('click', function () {
+    //     var url = 'customerBwShakeReport';
+    //     requestUrl(url)
+    // })
+    // $('#calculateCustomerMissRateCompareReport').on('click', function () {
+    //     var url = 'calculateCustomerMissRateCompareReport';
+    //     requestUrl(url)
+    // })
+    // $('#customerBusinessMissRateCompareReport').on('click', function () {
+    //     var url = 'customerBusinessMissRateCompareReport';
+    //     requestUrl(url)
+    // })
+    // $('#dailyOrMonthlyReportMysqlReport').on('click', function () {
+    //     var url = 'dailyOrMonthlyReportMysqlReport';
+    //     requestUrl(url)
+    // })
+    // $('#weeklyReportReport').on('click', function () {
+    //     var url = 'weeklyReportReport';
+    //     requestUrl(url)
+    // })
+    // $('#ispStableRateDailyReport').on('click', function () {
+    //     var url = 'ispStableRateDailyReport';
+    //     requestUrl(url)
+    // })
+    // $('#ispStableRateMonthReport').on('click', function () {
+    //     var url = 'ispStableRateMonthReport';
+    //     requestUrl(url)
+    // })
+    // $('#clientIspUnitPriceReport').on('click', function () {
+    //     var url = 'clientIspUnitPriceReport';
+    //     requestUrl(url)
+    // })
+    // $('#topMiddleBwMonitorReport').on('click', function () {
+    //     var url = 'topMiddleBwMonitorReport';
+    //     requestUrl(url)
+    // })
+    //
+    // $('#getTranscodeSummaryMail').on('click', function () {
+    //     var url = 'getTranscodeSummaryMail';
+    //     requestUrl(url)
+    // })
+    // $('#dayPeakAvgMonthPeak').on('click', function () {
+    //     var url = 'dayPeakAvgMonthPeak';
+    //     requestUrl(url)
+    // })
+    // $('#uncutReport').on('click', function () {
+    //     var url = 'uncutReport';
+    //     requestUrl(url)
+    // })
+    // $('#custRateInNodeReport').on('click', function () {
+    //     var url = 'custRateInNodeReport';
+    //     requestUrl(url)
+    // })
+    // $('#bufferReport').on('click', function () {
+    //     var url = 'bufferReport';
+    //     requestUrl(url)
+    // })
+    // $('#get95StateRate').on('click', function () {
+    //     var url = 'http://10.100.49.61:9012/report/get95StateRate';
+    //     requestAllPathUrl(url)
+    // })
+    // $('#accuracyReport').on('click', function () {
+    //     var url = 'http://10.100.49.61:9012/report/accuracy';
+    //     requestAllPathUrl(url)
+    // })
+
+
+
+    function requestUrl(url) {
+        var target = document.getElementById("target").value;
+        // var baseUrl = 'http://localhost:9080/';
+        var baseUrl = '';
+        $.ajax({
+            url: baseUrl + url,  // + "?target=" + target,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                console.log("success" + res)
+                alert("success");
+            },
+            error: function (err) {
+                alert("error");
+            }
+        })
+    }
+
+    function requestAllPathUrl(url) {
+        var target = document.getElementById("target").value;
+        // var baseUrl = 'http://localhost:9080/';
+        $.ajax({
+            url: url + "?target=" + target,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                console.log("success" + res)
+                alert("success");
+            },
+            error: function (err) {
+                alert("error");
+            }
+        })
+    }
+
+</script>
+</body>
+
+</html>
+

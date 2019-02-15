@@ -11,4 +11,10 @@ import javax.transaction.Transactional;
  */
 @Transactional
 public interface CustomerInfoDao extends CrudRepository<CustomerInfo, Long> {
+
+	@Override
+	Iterable<CustomerInfo> findAll();
+
+
+	Iterable<CustomerInfo> findBySexAndAgeBetween(String sex,Integer small,Integer big);
 }

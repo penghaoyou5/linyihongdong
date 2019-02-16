@@ -43,6 +43,17 @@ public class CustomerInfoHtml {
 		return templateEngine.process("queryinfo", new Context());
 	}
 
+
+	/**
+	 * 默认请求地址
+	 * @return
+	 */
+	@RequestMapping("")
+	private String requestDefault(){
+		return queryCollect();
+	}
+
+
 	@RequestMapping("queryCollect")
 	private String queryCollect(){
 		return templateEngine.process("query_collet", new Context());

@@ -22,7 +22,7 @@ public class CustomerSave {
 	@Autowired
 	CustomerSaveService saveService;
 
-	@RequestMapping
+	@RequestMapping("/apisaveone")
 	private APIResponse apisaveone(
 			String working_ground,
 			String name,

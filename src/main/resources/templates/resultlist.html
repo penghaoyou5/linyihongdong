@@ -54,13 +54,13 @@
                 <tbody>
                 <th:block th:each="customerInfo: ${customerInfos}">
                     <tr>
-                        <td th:text="${customerInfo.name}">123456</td>
-                        <td th:text="${customerInfo.sex}">测试节点名称</td>
+                        <td th:text="${customerInfo.name}">名字</td>
+                        <td th:text="${customerInfo.sex}">性别</td>
                         <td th:text="${customerInfo.chineseZodiac}">0</td>
                         <td th:text="${customerInfo.workingGround}">0</td>
-                        <td th:text="${customerInfo.age}+'%'">0</td>
+                        <td th:text="${customerInfo.age}">0</td>
                         <td th:text="${customerInfo.height}">0</td>
-                        <td th:text="${customerInfo.education}+'%'">0</td>
+                        <td th:text="${customerInfo.education}">0</td>
                         <td th:text="${customerInfo.weight}">0</td>
                         <td th:text="${customerInfo.nativePlace}">0</td>
                         <td th:text="${customerInfo.workingCompany}">0</td>
